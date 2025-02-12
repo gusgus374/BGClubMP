@@ -30,8 +30,8 @@ if "user" not in st.session_state:
 #if "password" not in st.session_state:
 #     st.session_state.password = None
 
-ROLES = [None,"Coach Gus", "Bently Parrish", "Kaydence Tillery", "Travis Tillery", "Jayden Clark", "Carly Courtney", "Henry Monge", "Heaven-Lee Moore", "Jaiden Ewnig", "Aden Rodgers", "Tyrese Harper", "Colin Jones"]
-allroles = ["Coach Gus", "Bently Parrish", "Kaydence Tillery", "Travis Tillery", "Jayden Clark", "Carly Courtney", "Henry Monge", "Heaven-Lee Moore", "Jaiden Ewnig", "Aden Rodgers", "Tyrese Harper", "Colin Jones"]
+ROLES = [None,"Coach Gus", "Bently Parrish", "Kaydence Tillery", "Travis Tillery", "Jayden Clark", "Carly Courtney", "Henry Monge", "Heaven-Lee Moore", "Jaiden Ewnig", "Aden Rodgers", "Tyrese Harper", "Colin Jones", "Quay Shaun Horace", "Caleb McGarry", "CJ Swartfager"]
+allroles = ["Coach Gus", "Bently Parrish", "Kaydence Tillery", "Travis Tillery", "Jayden Clark", "Carly Courtney", "Henry Monge", "Heaven-Lee Moore", "Jaiden Ewnig", "Aden Rodgers", "Tyrese Harper", "Colin Jones", "Quay Shaun Horace", "Caleb McGarry", "CJ Swartfager"]
 playersdeployed = ["Coach Gus"]
 def login():
 
