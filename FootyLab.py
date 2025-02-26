@@ -30,9 +30,9 @@ if "user" not in st.session_state:
 #if "password" not in st.session_state:
 #     st.session_state.password = None
 
-ROLES = [None,"Coach Gus", "Bently Parrish", "Kaydence Tillery", "Travis Tillery", "Jayden Clark", "Carly Courtney", "Henry Monge", "Heaven-Lee Moore", "Jaiden Ewnig", "Aden Rodgers", "Tyrese Harper", "Colin Jones", "Quay Shaun Horace", "Caleb McGarry", "CJ Swartfager"]
-allroles = ["Coach Gus", "Bently Parrish", "Kaydence Tillery", "Travis Tillery", "Jayden Clark", "Carly Courtney", "Henry Monge", "Heaven-Lee Moore", "Jaiden Ewnig", "Aden Rodgers", "Tyrese Harper", "Colin Jones", "Quay Shaun Horace", "Caleb McGarry", "CJ Swartfager"]
-playersdeployed = ["Coach Gus"]
+ROLES = [None,"Coach Gus", "Bently Parrish", "Kaydence Tillery", "Travis Tillery", "Jayden Clark", "Carly Courtney", "Henry Monge", "Heaven-Lee Moore", "Jaiden Ewnig", "Aden Rodgers", "Tyrese Harper", "Colin Jones", "Quay Shaun Horace", "Caleb McGarry", "CJ Swartfager","Ashtyn Moore","David Gallardo"]
+allroles = ["Coach Gus", "Bently Parrish", "Kaydence Tillery", "Travis Tillery", "Jayden Clark", "Carly Courtney", "Henry Monge", "Heaven-Lee Moore", "Jaiden Ewnig", "Aden Rodgers", "Tyrese Harper", "Colin Jones", "Quay Shaun Horace", "Caleb McGarry", "CJ Swartfager","Ashtyn Moore","David Gallardo"]
+playersdeployed = ["Coach Gus", "Jaiden Ewnig"]
 def login():
 
     st.header("Log in")
@@ -81,10 +81,17 @@ prosoccer = st.Page(
     icon=":material/sports_and_outdoors:",
 )
 
+jaiden = st.Page(
+    "./roster/jaiden.py",
+    title="Jaiden's App",
+    icon=":material/school:",
+    default=(user == "Jaiden Ewnig")
+)
+
 account_pages = [logout_page, settings]
 explore_pages = [BootRoom, prosoccer]
 build_pages = [codeBox]
-deployed_pages = [coachGus, classpage]
+deployed_pages = [coachGus, classpage, jaiden]
 
 page_dict = {}
 
