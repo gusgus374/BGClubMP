@@ -32,7 +32,7 @@ import altair as alt
 #st.divider()
 with st.expander("Catapult Login Info",icon=":material/passkey:"):
     st.subheader(":orange[Email Address:] footylab.1@datarook.com")
-    st.subheader(":orange[password:] Play2Learn")
+    st.subheader(":orange[password:] Play2Learn!")
 st.title("Let's Boot Up. Have a look at your last session's data:")
 components.iframe('https://oneapp.catapultsports.com/?embed=true', height=800, scrolling=True)
 with st.sidebar:

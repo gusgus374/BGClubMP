@@ -109,7 +109,7 @@ else:
 
 pg.run()
 
-st.logo("./media/footylab_v2_horizontal.png",link="https://datarook.com/")
+st.logo("./media/footylab_v2_horizontal.png")
 
 st.divider()
 st.header("Links and Resources")
