@@ -32,7 +32,7 @@ if "user" not in st.session_state:
 
 ROLES = [None,"Coach Gus", "Bently Parrish", "Kaydence Tillery", "Travis Tillery", "Jayden Clark", "Carly Courtney", "Henry Monge", "Heaven-Lee Moore", "Jaiden Ewnig", "Aden Rodgers", "Tyrese Harper", "Colin Jones", "Quay Shaun Horace", "Caleb McGarry", "CJ Swartfager","Ashtyn Moore","David Gallardo"]
 allroles = ["Coach Gus", "Bently Parrish", "Kaydence Tillery", "Travis Tillery", "Jayden Clark", "Carly Courtney", "Henry Monge", "Heaven-Lee Moore", "Jaiden Ewnig", "Aden Rodgers", "Tyrese Harper", "Colin Jones", "Quay Shaun Horace", "Caleb McGarry", "CJ Swartfager","Ashtyn Moore","David Gallardo"]
-playersdeployed = ["Coach Gus", "Jaiden Ewnig"]
+playersdeployed = ["Coach Gus", "Jaiden Ewnig", "Jayden Clark", "CJ Swartfager", "David Gallardo"]
 def login():
 
     st.header("Log in")
@@ -87,11 +87,28 @@ jaiden = st.Page(
     icon=":material/school:",
     default=(user == "Jaiden Ewnig")
 )
-
+jayden = st.Page(
+    "./roster/jayden.py",
+    title="Jayden's App",
+    icon=":material/school:",
+    default=(user == "Jayden Clark")
+)
+cj = st.Page(
+    "./roster/cj.py",
+    title="CJ's App",
+    icon=":material/school:",
+    default=(user == "CJ Swartfager")
+)
+david = st.Page(
+    "./roster/david.py",
+    title="David's App",
+    icon=":material/school:",
+    default=(user == "David Gallardo")
+)
 account_pages = [logout_page, settings]
 explore_pages = [BootRoom, prosoccer]
 build_pages = [codeBox]
-deployed_pages = [coachGus, classpage, jaiden]
+deployed_pages = [coachGus, classpage, jaiden, jayden, cj, david]
 
 page_dict = {}
 
