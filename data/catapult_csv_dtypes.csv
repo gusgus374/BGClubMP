@@ -1,0 +1,101 @@
+﻿,0
+Date,int64
+Session Title,object
+Player Name,object
+Split Name,object
+Tags,object
+Split Start Time,float64
+Split End Time,float64
+Duration,int64
+Distance (km),float64
+Sprint Distance (m),float64
+Power Plays,int64
+Energy (kcal),float64
+Impacts,int64
+Hr Load,int64
+Time In Red Zone (min),int64
+Player Load,float64
+Top Speed (m/s),float64
+Distance Per Min (m/min),float64
+Power Score (w/kg),float64
+Work Ratio,float64
+Hr Max (bpm),int64
+Max Deceleration (m/s/s),float64
+Max Acceleration (m/s/s),float64
+Distance in Speed Zone 1  (km),float64
+Distance in Speed Zone 2  (km),float64
+Distance in Speed Zone 3  (km),float64
+Distance in Speed Zone 4  (km),float64
+Distance in Speed Zone 5  (km),float64
+Time in Speed Zone 1 (secs),float64
+Time in Speed Zone 2 (secs),float64
+Time in Speed Zone 3 (secs),float64
+Time in Speed Zone 4 (secs),float64
+Time in Speed Zone 5 (secs),float64
+Impact Zones: 3 - 5 G (Impacts),int64
+Impact Zones: 5 - 10 G (Impacts),int64
+Impact Zones: 10 - 15 G (Impacts),int64
+Impact Zones: 15 - 20 G (Impacts),int64
+Impact Zones: > 20 G (Impacts),int64
+Power Play Duration Zones: 0 - 2.5 s (Power Plays),int64
+Power Play Duration Zones: 2.5 - 5 s (Power Plays),int64
+Power Play Duration Zones: 5 - 7.5 s (Power Plays),int64
+Power Play Duration Zones: 7.5 - 10 s (Power Plays),int64
+Power Play Duration Zones: > 10 s (Power Plays),int64
+Distance in Deceleration Zones: 0 - 1 m/s/s  (km),float64
+Distance in Deceleration Zones: 1 - 2 m/s/s  (km),float64
+Distance in Deceleration Zones: 2 - 3 m/s/s  (km),float64
+Distance in Deceleration Zones: 3 - 4 m/s/s  (km),float64
+Distance in Deceleration Zones: > 4 m/s/s  (km),float64
+Time in Deceleration Zones: 0 - 1 m/s/s (secs),float64
+Time in Deceleration Zones: 1 - 2 m/s/s (secs),float64
+Time in Deceleration Zones: 2 - 3 m/s/s (secs),float64
+Time in Deceleration Zones: 3 - 4 m/s/s (secs),float64
+Time in Deceleration Zones: > 4 m/s/s (secs),float64
+Distance in Acceleration Zones: 0 - 1 m/s/s  (km),float64
+Distance in Acceleration Zones: 1 - 2 m/s/s  (km),float64
+Distance in Acceleration Zones: 2 - 3 m/s/s  (km),float64
+Distance in Acceleration Zones: 3 - 4 m/s/s  (km),float64
+Distance in Acceleration Zones: > 4 m/s/s  (km),float64
+Time in Acceleration Zones: 0 - 1 m/s/s (secs),float64
+Time in Acceleration Zones: 1 - 2 m/s/s (secs),float64
+Time in Acceleration Zones: 2 - 3 m/s/s (secs),float64
+Time in Acceleration Zones: 3 - 4 m/s/s (secs),float64
+Time in Acceleration Zones: > 4 m/s/s (secs),float64
+Distance in Power Zone: 0 - 5 w/kg  (km),float64
+Distance in Power Zone: 5 - 10 w/kg  (km),float64
+Distance in Power Zone: 10 - 15 w/kg  (km),float64
+Distance in Power Zone: 15 - 20 w/kg  (km),float64
+Distance in Power Zone: 20 - 25 w/kg  (km),float64
+Distance in Power Zone: 25 - 30 w/kg  (km),float64
+Distance in Power Zone: 30 - 35 w/kg  (km),float64
+Distance in Power Zone: 35 - 40 w/kg  (km),float64
+Distance in Power Zone: 40 - 45 w/kg  (km),float64
+Distance in Power Zone: 45 - 50 w/kg  (km),float64
+Distance in Power Zone: > 50 w/kg  (km),float64
+Time in Power Zone: 0 - 5 w/kg (secs),float64
+Time in Power Zone: 5 - 10 w/kg (secs),float64
+Time in Power Zone: 10 - 15 w/kg (secs),float64
+Time in Power Zone: 15 - 20 w/kg (secs),float64
+Time in Power Zone: 20 - 25 w/kg (secs),float64
+Time in Power Zone: 25 - 30 w/kg (secs),float64
+Time in Power Zone: 30 - 35 w/kg (secs),float64
+Time in Power Zone: 35 - 40 w/kg (secs),float64
+Time in Power Zone: 40 - 45 w/kg (secs),float64
+Time in Power Zone: 45 - 50 w/kg (secs),float64
+Time in Power Zone: > 50 w/kg (secs),float64
+Time in HR Load Zone 0% - 60% Max HR(secs),float64
+Time in HR Load Zone 60% - 75% Max HR (secs),int64
+Time in HR Load Zone 75% - 85% Max HR (secs),int64
+Time in HR Load Zone 85% - 96% Max HR (secs),int64
+Time in HR Load Zone 96% - 100% Max HR (secs),int64
+Accelerations Zone Count: 0 - 1 m/s/s,int64
+Accelerations Zone Count: 1 - 2 m/s/s,int64
+Accelerations Zone Count: 2 - 3 m/s/s,int64
+Accelerations Zone Count: 3 - 4 m/s/s,int64
+Accelerations Zone Count: > 4 m/s/s,int64
+Deceleration Zone Count: 0 - 1 m/s/s,int64
+Deceleration Zone Count: 1 - 2 m/s/s,int64
+Deceleration Zone Count: 2 - 3 m/s/s,int64
+Deceleration Zone Count: 3 - 4 m/s/s,int64
+Deceleration Zone Count: > 4 m/s/s,int64

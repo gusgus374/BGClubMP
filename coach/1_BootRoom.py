@@ -17,6 +17,8 @@ import streamlit as st
 import streamlit.components.v1 as components
 from PIL import Image
 import altair as alt
+# Import our custom utility function
+from utils import load_catapult_data
 
 
 #with st.container():
@@ -62,24 +64,23 @@ with st.echo():
         #uploaded_file = st.file_uploader("Choose a file")
     uploaded_file = st.file_uploader("Choose a file")
     if uploaded_file is not None:
-        dataframe = pd.read_csv(uploaded_file)
-        with st.expander(label="Collapse/Expand",expanded=True):
-            st.write(dataframe)
-        coach_message = st.chat_message(name="Coach Gus",avatar="./media/profile_coachGus.JPG")
-        coach_message.write("Let's clean this data up...the code below selects only the rows from the table where the column **Split Name** has the value 'game'")
-        coach_message.write('Then we make the table index be Player Name instead of the random column of numbers we see above')
+        dataframe = load_catapult_data(uploaded_file)
+    elif os.path.exists('./data/last30days_GPS.csv'):
+        # Use default file if no upload and default file exists
+        dataframe = load_catapult_data('./data/last30days_GPS.csv')
+
 if uploaded_file is not None:    
     with st.echo():
         dataframe = dataframe.loc[dataframe['Split Name'] == 'game']
         dataframe = dataframe.set_index('Player Name', drop=False)
         #let's see where we are at now
         st.dataframe(dataframe,use_container_width=True)
-        coach_message = st.chat_message(name="Coach Gus",avatar="./media/profile_coachGus.JPG")
-        coach_message.write("We're getting there! But I think we can do better a little better:")
+        #coach_message = st.chat_message(name="Coach Gus",avatar="./media/profile_coachGus.JPG")
+        #coach_message.write("We're getting there! But I think we can do better a little better:")
 if uploaded_file is not None:
-    with st.echo():
-        dataframe = dataframe.drop(['Date','Split Name','Tags','Hr Load','Time In Red Zone (min)','Hr Max (bpm)'],axis=1)
-        st.dataframe(dataframe)
+    #with st.echo():
+     #   dataframe = dataframe.drop(['Date','Split Name','Tags','Hr Load','Time In Red Zone (min)','Hr Max (bpm)'],axis=1)
+      #  st.dataframe(dataframe)
     coach_message = st.chat_message(name="Coach Gus",avatar="./media/profile_coachGus.JPG")
     coach_message.write("I'm interested in the relationship between distance covered and sprint distance. Here's the code to create the graph:")
 
@@ -117,15 +118,16 @@ st.divider()
 if uploaded_file is not None:
     #dataframe = pd.read_csv(uploaded_file)
     with st.expander(label="Collapse/Expand",expanded=False):
-            st.write(dataframe)
+        st.write(dataframe)
     #dataframe = dataframe.loc[dataframe['Split Name'] == 'game']
     #dataframe = dataframe.drop(['Date','Split Name','Tags','Hr Load','Time In Red Zone (min)','Hr Max (bpm)'],axis=1)
     with st.popover("Change the graph variables"):
-         mycol = dataframe.columns.tolist()
-         xvar = st.selectbox("Pick Variable #1",mycol)
-         yvar = st.selectbox("Pick Variable #2",mycol,5)
-         dotsize = st.selectbox("Size of data point",mycol,6)
-         dotcolor = st.selectbox("Color of data point",mycol,1)
+        mycol = dataframe.columns.tolist()
+        #        all_data = load_catapult_data(uploaded_file)
+        xvar = st.selectbox("Pick Variable #1",mycol)
+        yvar = st.selectbox("Pick Variable #2",mycol,5)
+        dotsize = st.selectbox("Size of data point",mycol,6)
+        dotcolor = st.selectbox("Color of data point",mycol,1)
     chart = alt.Chart(dataframe).mark_circle().encode(
             x=xvar,
             y=yvar,

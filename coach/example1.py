@@ -4,6 +4,8 @@
 # First, we need to import some tools (called libraries)
 import streamlit as st
 import pandas as pd
+# Import our custom utility function
+from utils import load_catapult_data
 
 # This makes a title at the top of our app
 st.title("My First Soccer Data App!")
@@ -21,12 +23,13 @@ st.write("Let's see what we can learn about your game!")
 # Show the code for loading data
 with st.expander("👀 Click here to see how we load your data", expanded=False):
     st.code("""
-    # This code loads data from a CSV file
-    data = pd.read_csv('./data/BGCMP_data.csv')
+    # This code loads data from a CSV file and processes it
+    from utils import load_catapult_data
+    data = load_catapult_data('./data/BGCMP_data.csv')
     """)
 
 # Now we'll load your data from a file
-data = pd.read_csv('./data/BGCMP_data.csv')
+data = load_catapult_data('./data/BGCMP_data.csv')
 
 coach_message = st.chat_message(name="Coach Gus", avatar="./media/profile_coachGus.JPG")
 with coach_message:

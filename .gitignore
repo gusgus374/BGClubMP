@@ -1,1 +1,5 @@
 /.streamlit/secrets.toml
+.env
+.python-version
+***/__pycache__/*
+roster/***

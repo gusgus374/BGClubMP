@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+# Import our custom utility function
+from utils import load_catapult_data
 
 st.title("⏱️ Speed and Distance Calculator ⏱️")
 
@@ -13,11 +15,12 @@ st.write("Let's learn how speed, distance, and time are related!")
 # Load the data
 with st.expander("👀 See the code that loads your data", expanded=False):
     st.code("""
-    # This loads all player data from the file
-    data = pd.read_csv('./data/BGCMP_data.csv')
+    # This loads all player data from the file and processes it
+    from utils import load_catapult_data
+    data = load_catapult_data('./data/BGCMP_data.csv')
     """)
 
-data = pd.read_csv('./data/BGCMP_data.csv')
+data = load_catapult_data('./data/BGCMP_data.csv')
 
 # Create a dropdown to select a player
 all_players = data["Player Name"].unique().tolist()

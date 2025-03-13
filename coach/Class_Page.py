@@ -10,6 +10,8 @@ import time
 import os
 import pathlib
 import streamlit.components.v1 as components
+# Import our custom utility function
+from utils import load_catapult_data
 
 
 st.title("CLASS PAGE - example")
@@ -149,7 +151,7 @@ with st.echo("below"):
 
     file_location = "./data/last30days_GPS.csv"
     
-    data = pd.read_csv(file_location)
+    data = load_catapult_data(file_location)
 
     group_data = pd.DataFrame(data)
 
@@ -158,13 +160,13 @@ with st.echo("below"):
         st.dataframe(players_data)
 
     lines = alt.Chart(players_data, title="My interactive chart").mark_line().encode(
-            x="Session Title:T",#the little ":T" after "Session Title" tells altair that this data is a time or date value
+            x="Date:T",#the little ":T" after "Session Title" tells altair that this data is a time or date value
             y="Top Speed (m/s)",
             color="Player Name"
     )
 
     circles = alt.Chart(players_data).mark_circle().encode(
-            x="Session Title:T",
+            x="Date:T",
             y="Top Speed (m/s)",
             color="Player Name",
             size=alt.Size("Distance (km)",legend=None),
@@ -184,8 +186,7 @@ st.divider()
 #use the Pandas read_csv method to read the gps_data and turn into a dataframe
 # Read the CSV file
 #file_path = './data/last30days_GPS.csv'
-#all_data = pd.read_csv(file_path)
-# Replace ":" with "_" in the column names
+#all_data = load_catapult_data(file_path)
 #all_data.columns = [col.replace(':', ' ') for col in all_data.columns]
 #keep only the rows were the column 'Split Name' has a value equal to 'all'
 #game_data = all_data.loc[all_data['Split Name'] == "game"]

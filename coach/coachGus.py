@@ -11,6 +11,7 @@ import altair as alt
 import streamlit.components.v1 as components
 from streamlit_ace import st_ace
 import time
+from utils import load_catapult_data
 
 
 st.title("Welcome to")
@@ -91,9 +92,8 @@ with st.expander("~~spellbooks~~ libraries used"):
 with st.echo():
         file_location = os.path.join(str(pathlib.Path().resolve()), './data/last30days_GPS.csv')
         #using the os and path libraries (spellbooks), we save the location of our data file in the variable "file_location"
-        #then we use the "open" spell to take a look at the file location and store the contents inside of the "file" variable. We then use the pandas method, read_csv(), to read the data file and store inside the "data" variable
-        with open(file_location) as file:
-                data = pd.read_csv(file)
+        #then we use our custom utility function to load and process the data file
+        data = load_catapult_data(file_location)
         #then we make sure the data is in the right format (called a type) for us to work with, DataFrame, using the pandas method DataFrame(). We call our pandas DataFrame "ETFS_data"
         group_data = pd.DataFrame(data)
         #then we take a look at our data using st.dataframe()
@@ -128,7 +128,7 @@ with coach_message:
         st.write("I want a line chart so:")
         with st.echo():
                 lines = alt.Chart(players_data, title="My interactive chart").mark_line().encode(
-                        x="Session Title:T",#the little ":T" after "Session Title" tells altair that this data is a time or date value
+                        x="Date:T",#the little ":T" after "Session Title" tells altair that this data is a time or date value
                         y="Top Speed (m/s)",
                         color="Player Name"
                 )
@@ -142,7 +142,7 @@ with coach_message:
         st.write("Not too different than before right? Well, let's add some circles so it's easier to read the data.")
         with st.echo():
                 circles = alt.Chart(players_data).mark_circle().encode(
-                        x="Session Title:T",
+                        x="Date:T",
                         y="Top Speed (m/s)",
                         color="Player Name",
                         size=alt.Size("Distance (km)",legend=None),
